@@ -1,31 +1,48 @@
-# shadcn/ui monorepo template
+# Gather
+> NB: Currently in very early stages of development.
 
-This template is for creating a monorepo with shadcn/ui.
+Gather is an application for the Baha'i community to record community building activity statistics, generate insights, and encourage new approaches for collective community growth.
+
+It has been a challenge for the Baha'i community to seamlessly and intuitively record and analyze statistics on their community building efforts. This application aims to help with that.
+
+## Prerequisites
+- Node.js 18+
+- pnpm
+- Docker
+- Database Tool for Postgres (e.g. TablePlus, DBeaver, etc.)
 
 ## Usage
 
+Install the dependencies:
 ```bash
-pnpm dlx shadcn@latest init
+pnpm install
 ```
 
-## Adding components
-
-To add components to your app, run the following command at the root of your `web` app:
-
+## Setting up the Environment (FOR EXPLORING AND TESTING ONLY)
+This will create an `.env` file in the `apps/api` directory to use for testing out the application.
+> NB: This is only for testing out the application, and is not used in production.
 ```bash
-pnpm dlx shadcn@latest add button -c apps/web
+pnpm setup:env
 ```
 
-This will place the ui components in the `packages/ui/src/components` directory.
+## Running the Applications
+> NB: Have Docker running before starting the application.
 
-## Tailwind
-
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
-
-## Using components
-
-To use the components in your app, import them from the `ui` package.
-
-```tsx
-import { Button } from "@workspace/ui/components/ui/button"
+Running both the API and Web applications:
+```bash
+pnpm turbo dev
 ```
+
+### Developing & Testing the API Application
+[API app specifics](apps/api/README.md)
+
+### Developing &Testing the Web Application
+[Web app specifics](apps/web/README.md)
+
+## TODO
+- [x] Add Nest Application
+- [x] Add and configure Prisma
+- [x] Add GraphQL
+- [ ] Build out the API (in progress)
+- [ ] Build out the UI
+
