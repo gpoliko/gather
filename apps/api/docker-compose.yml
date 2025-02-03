@@ -7,10 +7,10 @@ services:
     volumes:
       - my_pg_v:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: mydb
-      POSTGRES_PASSWORD: mypass
-      POSTGRES_USER: myuser
-    container_name: gather_db
+      POSTGRES_DB: dev_db
+      POSTGRES_USER: postgresdev
+      POSTGRES_PASSWORD: postgresdev
+    container_name: gather_db_dev
 
 volumes:
   my_pg_v:
